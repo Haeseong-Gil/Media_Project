@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: 8546e8070ab7b5141a43cf8df7819231
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3088839124903246926
+    second: BrassManagementFrame_0
+  - first:
+      213: 2333057458355739116
+    second: BrassManagementFrame_1
+  - first:
+      213: 913348631702074418
+    second: BrassManagementFrame_2
+  - first:
+      213: 1481089545540625321
+    second: BrassManagementFrame_3
+  - first:
+      213: -238724661513092923
+    second: BrassManagementFrame_4
+  - first:
+      213: -4657102936238477965
+    second: BrassManagementFrame_5
+  - first:
+      213: -4039036494827712770
+    second: BrassManagementFrame_6
+  - first:
+      213: -3295984221329309086
+    second: BrassManagementFrame_7
+  - first:
+      213: 6999674360884920409
+    second: BrassManagementFrame_8
+  - first:
+      213: 4186704413471576970
+    second: BrassManagementFrame_9
+  - first:
+      213: -523521214050437005
+    second: BrassManagementFrame_10
+  - first:
+      213: -7811552697274267447
+    second: BrassManagementFrame_11
+  - first:
+      213: -6989998046569358484
+    second: BrassManagementFrame_12
+  - first:
+      213: -2455037093889567895
+    second: BrassManagementFrame_13
+  - first:
+      213: -643189270941728944
+    second: BrassManagementFrame_14
+  - first:
+      213: -1472220457472854579
+    second: BrassManagementFrame_15
+  - first:
+      213: 8047175899586734725
+    second: BrassManagementFrame_16
+  - first:
+      213: -1235418537556522488
+    second: BrassManagementFrame_17
+  - first:
+      213: -2754320380314655561
+    second: BrassManagementFrame_18
+  - first:
+      213: -1007653453419854306
+    second: BrassManagementFrame_19
+  - first:
+      213: 3923028808498725197
+    second: BrassManagementFrame_20
+  - first:
+      213: 1927495050852358305
+    second: BrassManagementFrame_21
+  - first:
+      213: 774116065304949495
+    second: BrassManagementFrame_22
+  - first:
+      213: 1359524879404829845
+    second: BrassManagementFrame_23
+  - first:
+      213: -8235845272372625932
+    second: BrassManagementFrame_24
+  - first:
+      213: -6284956004633047881
+    second: BrassManagementFrame_25
+  - first:
+      213: 5853947115475727167
+    second: BrassManagementFrame_26
+  - first:
+      213: 5171418281574634746
+    second: BrassManagementFrame_27
+  - first:
+      213: 6810776420629191676
+    second: BrassManagementFrame_28
+  - first:
+      213: -8332151535163442819
+    second: BrassManagementFrame_29
+  - first:
+      213: 935183716525317640
+    second: BrassManagementFrame_30
+  - first:
+      213: 1475154439838846295
+    second: BrassManagementFrame_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BrassManagementFrame
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 93
+        width: 1379
+        height: 909
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 66, y: 66, z: 66, w: 66}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3baca9f005b4240bac82550a043be9
+      internalID: 1079179968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fbf9c38ac40b918499ca0dfd9808651d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BrassManagementFrame: 1079179968
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

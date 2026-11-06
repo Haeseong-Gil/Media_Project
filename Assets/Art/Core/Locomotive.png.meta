@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: d4a6af2438a50524c8170803a92d36a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4853359345605729201
+    second: Locomotive_0
+  - first:
+      213: 4080313251015612511
+    second: Locomotive_1
+  - first:
+      213: -2805219514057222459
+    second: Locomotive_2
+  - first:
+      213: 9067356206714521506
+    second: Locomotive_3
+  - first:
+      213: -8051464452350612031
+    second: Locomotive_4
+  - first:
+      213: 5957308197734625295
+    second: Locomotive_5
+  - first:
+      213: -115811122384429006
+    second: Locomotive_6
+  - first:
+      213: 3958344211976467543
+    second: Locomotive_7
+  - first:
+      213: 970534095668040046
+    second: Locomotive_8
+  - first:
+      213: 8171642479008642318
+    second: Locomotive_9
+  - first:
+      213: 7363354614710038104
+    second: Locomotive_10
+  - first:
+      213: -8056893098040139247
+    second: Locomotive_11
+  - first:
+      213: -1855610918403009381
+    second: Locomotive_12
+  - first:
+      213: 772149220927354933
+    second: Locomotive_13
+  - first:
+      213: -7794167558105547281
+    second: Locomotive_14
+  - first:
+      213: -363191506906235247
+    second: Locomotive_15
+  - first:
+      213: -2106619094707092170
+    second: Locomotive_16
+  - first:
+      213: 3569770298414564700
+    second: Locomotive_17
+  - first:
+      213: -7846071273763088221
+    second: Locomotive_18
+  - first:
+      213: -6246756042618711257
+    second: Locomotive_19
+  - first:
+      213: -4722519676314135179
+    second: Locomotive_20
+  - first:
+      213: 473258488198623903
+    second: Locomotive_21
+  - first:
+      213: -3839714039775098274
+    second: Locomotive_22
+  - first:
+      213: -1636061653812470278
+    second: Locomotive_23
+  - first:
+      213: 5412174797792964770
+    second: Locomotive_24
+  - first:
+      213: 3344835010337098502
+    second: Locomotive_25
+  - first:
+      213: 3460613632643455914
+    second: Locomotive_26
+  - first:
+      213: -6752078605737976671
+    second: Locomotive_27
+  - first:
+      213: 7194217232888959222
+    second: Locomotive_28
+  - first:
+      213: 7567150131234176719
+    second: Locomotive_29
+  - first:
+      213: -3395253423125131931
+    second: Locomotive_30
+  - first:
+      213: -3316763103040476367
+    second: Locomotive_31
+  - first:
+      213: 4859682204391812121
+    second: Locomotive_32
+  - first:
+      213: 3539732004837584345
+    second: Locomotive_33
+  - first:
+      213: 7304602460237766264
+    second: Locomotive_34
+  - first:
+      213: -5268701095529984431
+    second: Locomotive_35
+  - first:
+      213: 3204469151045034215
+    second: Locomotive_36
+  - first:
+      213: 2616767586659346814
+    second: Locomotive_37
+  - first:
+      213: 8961065677041529927
+    second: Locomotive_38
+  - first:
+      213: -9158163237683456504
+    second: Locomotive_39
+  - first:
+      213: -4090307998050441281
+    second: Locomotive_40
+  - first:
+      213: 7226064127264732807
+    second: Locomotive_41
+  - first:
+      213: 2094730353108305608
+    second: Locomotive_42
+  - first:
+      213: 3652658886809748384
+    second: Locomotive_43
+  - first:
+      213: -2903161959675095281
+    second: Locomotive_44
+  - first:
+      213: 6729047474030936389
+    second: Locomotive_45
+  - first:
+      213: 5864188875716049662
+    second: Locomotive_46
+  - first:
+      213: -6041777125398919921
+    second: Locomotive_47
+  - first:
+      213: -7481977781680441128
+    second: Locomotive_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Locomotive
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 98
+        width: 1742
+        height: 667
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28006c725f90c7b4da0ce29e1b251452
+      internalID: -144913785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3ac53b845e615f842a6227d2084e2f71
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Locomotive: -144913785
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

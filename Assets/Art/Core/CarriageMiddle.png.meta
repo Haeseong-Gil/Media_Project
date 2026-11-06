@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: 1cc35088290247e4c927b10894538c87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6154135557736176778
+    second: CarriageMiddle_0
+  - first:
+      213: -3577339651697849169
+    second: CarriageMiddle_1
+  - first:
+      213: -8954575114317364357
+    second: CarriageMiddle_2
+  - first:
+      213: 28261709099784338
+    second: CarriageMiddle_3
+  - first:
+      213: -3960528400661801976
+    second: CarriageMiddle_4
+  - first:
+      213: 2234305049870506951
+    second: CarriageMiddle_5
+  - first:
+      213: -6545826073516097026
+    second: CarriageMiddle_6
+  - first:
+      213: 1412943222780119760
+    second: CarriageMiddle_7
+  - first:
+      213: 657836251040952564
+    second: CarriageMiddle_8
+  - first:
+      213: -7954453545023646465
+    second: CarriageMiddle_9
+  - first:
+      213: -5088754872830605652
+    second: CarriageMiddle_10
+  - first:
+      213: 2738685785900003143
+    second: CarriageMiddle_11
+  - first:
+      213: 1048093236636395601
+    second: CarriageMiddle_12
+  - first:
+      213: -7900722426987620137
+    second: CarriageMiddle_13
+  - first:
+      213: -4898788527601755797
+    second: CarriageMiddle_14
+  - first:
+      213: -4402567400497141256
+    second: CarriageMiddle_15
+  - first:
+      213: 2769667343313409730
+    second: CarriageMiddle_16
+  - first:
+      213: -2627688925790807998
+    second: CarriageMiddle_17
+  - first:
+      213: 8509425480164715556
+    second: CarriageMiddle_18
+  - first:
+      213: -130300073398027941
+    second: CarriageMiddle_19
+  - first:
+      213: -1552062157037245342
+    second: CarriageMiddle_20
+  - first:
+      213: -8209344366675655567
+    second: CarriageMiddle_21
+  - first:
+      213: -1098582002455362733
+    second: CarriageMiddle_22
+  - first:
+      213: 342202954579223177
+    second: CarriageMiddle_23
+  - first:
+      213: 7954699851358107031
+    second: CarriageMiddle_24
+  - first:
+      213: 3079749960501519618
+    second: CarriageMiddle_25
+  - first:
+      213: -5001263861519636552
+    second: CarriageMiddle_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CarriageMiddle
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 81
+        width: 1720
+        height: 635
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6f8d72583bccc49afb8195cada4788
+      internalID: 1029286806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c553d43c01b5a7741bcfbae41a35d575
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CarriageMiddle: 1029286806
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
