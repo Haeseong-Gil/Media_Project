@@ -15,6 +15,7 @@ public sealed class MinimalRunPresentation : MonoBehaviour
     [Header("연결된 화면 · 보통 수정하지 않음")]
     [SerializeField] private MinimalRunScreen screen;
     [SerializeField] private Image backgroundTarget;
+    [SerializeField] private Image stationPlatform;
     [SerializeField] private Image[] trainTargets;
     [SerializeField] private GameObject[] placeholderLabels;
     [SerializeField] private GameObject artNotice;
@@ -40,10 +41,20 @@ public sealed class MinimalRunPresentation : MonoBehaviour
         bool atStation = screen != null && screen.Model != null && screen.Model.AtStation;
         bool pending = screen != null && screen.Model != null && screen.Model.ChoicePaused;
         previousStation = atStation; previousChoice = pending;
-        SetImage(backgroundTarget, atStation ? stationBackground : generalBackground,
-            atStation ? stationColor : generalColor, true);
+        Sprite background = atStation ? stationBackground : generalBackground;
+        if (stationPlatform != null)
+        {
+            bool showPlatform = atStation && stationBackground != null;
+            stationPlatform.gameObject.SetActive(showPlatform);
+            if (showPlatform)
+            {
+                background = generalBackground;
+                SetImage(stationPlatform, stationBackground, stationColor, true);
+            }
+        }
+        SetImage(backgroundTarget, background, atStation ? stationColor : generalColor, true);
         if (railPlaceholder != null)
-            railPlaceholder.SetActive((atStation ? stationBackground : generalBackground) == null);
+            railPlaceholder.SetActive(background == null);
         Sprite[] sprites = { locomotive, carriageOne, carriageTwo };
         for (int i = 0; trainTargets != null && i < trainTargets.Length && i < sprites.Length; i++)
         {

@@ -26,7 +26,6 @@ public sealed class MinimalRunScreen : MonoBehaviour
     [SerializeField] private Button rejectButton;
     [Header("타이틀·결정창·실패 화면")]
     [SerializeField] private GameObject titlePanel;
-    [SerializeField] private Text titleDetails;
     [SerializeField] private GameObject survivorPanel;
     [SerializeField] private Text survivorDetails;
     [SerializeField] private Button choiceToggleButton;
@@ -163,7 +162,6 @@ public sealed class MinimalRunScreen : MonoBehaviour
         if (failurePanel != null) failurePanel.SetActive(!IsAtTitle && Model.Failed);
         if (choiceToggleButton != null) choiceToggleButton.gameObject.SetActive(!IsAtTitle && !Model.Failed && Model.ChoicePaused);
         SetLabel(choiceToggleLabel, ChoiceVisible ? "상태 보기 · 게임 정지" : "수용·거절 창 다시 열기");
-        SetLabel(titleDetails, $"식량·연료와 공동체의 최소 생존 순환\n시작 인원 {tuning.startingPeople}명 / 식량 {tuning.startingFood:0.#} / 연료 {tuning.startingFuel:0.#}\n하루 {tuning.secondsPerDay:0.#}초 · 일반 구역에 정차한 상태로 시작");
         SetLabel(survivorDetails, $"생존자 {Model.PendingSurvivors}명이 합류를 요청합니다.\n현재 인원 {Model.People}명 → 수용 후 {Model.People + Model.PendingSurvivors}명\n하루 식량 필요량 {Model.People * tuning.foodPerPersonPerDay:0.#} → {(Model.People + Model.PendingSurvivors) * tuning.foodPerPersonPerDay:0.#}\n시간 제한 없음 · 상태 보기로 확인한 뒤 결정하세요.");
         SetLabel(failureDetails, Model.Report + $"\n경과 {Model.Elapsed:0}초 · 타이틀의 시작 버튼으로 새 RUN을 시작합니다.");
     }
