@@ -1,0 +1,63 @@
+fileFormatVersion: 2
+guid: 2268f751f96f4b9f93eedab49aa0f244
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 678457913
+    second: PocketWatch_MinuteHand
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    enableMipMap: 0
+    sRGBTexture: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  spritePixelsToUnits: 100
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  textureShape: 1
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PocketWatch_MinuteHand
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 334
+        width: 138
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb3e0e30591459ab162bab040680546
+      internalID: 678457913
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    nameFileIdTable:
+      PocketWatch_MinuteHand: 678457913

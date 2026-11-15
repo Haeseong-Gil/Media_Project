@@ -60,12 +60,20 @@ public sealed class MinimalRunPlayerVerification : MonoBehaviour
         Snapshot("01-title");
         Click("TitleOverlay/Body/StartButton");
         var model = screen.Model;
-        Require(model.People == 6 && model.Food == 100 && model.Fuel == 1000, "Start values 6/100/1000");
+        Require(model.People == 6 && model.Food == 25 && model.Fuel == 100, "Start values 6/25/100");
         yield return new WaitForEndOfFrame();
         Snapshot("02-general");
 
-        Click("ControlArea/DriveButton"); model.Advance(60); Click("ControlArea/DriveButton");
-        Require(model.AtStation && !model.Moving && model.Fuel == 985, "Departure, moving fuel and 60s station");
+        var hand = screen.transform.Find("TrainArea/PocketWatch/MinuteHand");
+        Click("ControlArea/DriveButton");
+        model.Advance(20);
+        yield return new WaitForEndOfFrame();
+        Require(model.Day == 1 && model.Food == 13 && Quaternion.Angle(hand.localRotation, Quaternion.Euler(0, 0, -120)) < 0.1f,
+            "First meal and clock at 20s");
+        model.Advance(model.ZoneDuration - model.ZoneElapsed);
+        Click("ControlArea/DriveButton");
+        Require(model.AtStation && !model.Moving && model.Fuel == 89 && model.Food == 1 &&
+            Quaternion.Angle(hand.localRotation, Quaternion.Euler(0, 0, -240)) < 0.1f, "40s station, second meal, fuel and clock");
         Click("ControlArea/DispatchButton"); Click("ControlArea/ReturnButton");
         Require(model.PendingSurvivors == 5, "First station return opens choice");
         yield return new WaitForEndOfFrame();
@@ -93,18 +101,18 @@ public sealed class MinimalRunPlayerVerification : MonoBehaviour
         Click("ControlArea/ReturnButton");
         Require(Math.Abs(model.Food - stockFood - carryFood) < 0.00001 && model.Team == 0 && model.PendingSurvivors == 0, "Return deposits once; event does not repeat");
         model.Advance(10000); screen.Drive();
-        Require(model.Failed, "Daily food and starvation reach failure");
+        Require(model.Succeeded && model.Day == 4 && model.Elapsed == 180, "Survive three days and finish at 180s");
         yield return new WaitForEndOfFrame();
-        Snapshot("06-failure");
+        Snapshot("06-success");
         Click("FailureOverlay/Body/TitleButton");
-        Require(screen.IsAtTitle, "Failure returns to title");
+        Require(screen.IsAtTitle, "Result returns to title");
         yield return new WaitForEndOfFrame();
         Click("TitleOverlay/Body/StartButton");
-        Require(screen.Model != model && screen.Model.People == 6 && screen.Model.Food == 100 && screen.Model.Fuel == 1000 &&
-            screen.Model.Elapsed == 0 && !screen.Model.SurvivorEventOccurred, "New RUN resets all state");
+        Require(screen.Model != model && screen.Model.People == 6 && screen.Model.Food == 25 && screen.Model.Fuel == 100 &&
+            screen.Model.Elapsed == 0 && screen.Model.HungerScore == 0 && !screen.Model.SurvivorEventOccurred, "New RUN resets all state");
         yield return new WaitForEndOfFrame();
 
-        Click("ControlArea/DriveButton"); screen.Model.Advance(60); Click("ControlArea/DriveButton");
+        Click("ControlArea/DriveButton"); screen.Model.Advance(screen.Model.ZoneDuration); Click("ControlArea/DriveButton");
         Click("ControlArea/DispatchButton"); Click("ControlArea/ReturnButton");
         yield return new WaitForEndOfFrame();
         Click("SurvivorOverlay/Body/RejectButton");

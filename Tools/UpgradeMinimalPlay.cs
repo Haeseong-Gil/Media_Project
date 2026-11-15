@@ -66,14 +66,13 @@ public static class UpgradeMinimalPlay
         var ret = MakeButton(lower, "ReturnButton", "즉시 귀환", 1608, 96, 280, out ignored);
         var accept = MakeButton(lower, "AcceptButton", "생존자 수용", 1320, 172, 268, out ignored);
         var reject = MakeButton(lower, "RejectButton", "거절", 1608, 172, 280, out ignored);
-        var survivors = Label(lower, "Survivors", "생존자 요청 없음", 1320, 242, 568, 42, 24);
         var notice = Label(lower, "TemporaryRules", "임시 조정값 사용 · 신뢰와 좀비 위험은 제외", 32, 296, 1856, 48, 25);
 
         var controller = root.GetComponent<MinimalRunScreen>();
         var so = new SerializedObject(controller);
         Set(so, "zoneText", zone); Set(so, "clockText", clock); Set(so, "resourcesText", resourceText);
         Set(so, "reportText", report); Set(so, "teamText", team); Set(so, "crewText", crew);
-        Set(so, "survivorsText", survivors); Set(so, "driveLabel", driveLabel); Set(so, "noticeText", notice);
+        Set(so, "driveLabel", driveLabel); Set(so, "noticeText", notice);
         Set(so, "driveButton", drive); Set(so, "dispatchButton", dispatch); Set(so, "returnButton", ret);
         Set(so, "minusButton", minus); Set(so, "plusButton", plus); Set(so, "acceptButton", accept); Set(so, "rejectButton", reject);
         so.ApplyModifiedPropertiesWithoutUndo();

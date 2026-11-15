@@ -24,31 +24,17 @@ public static class ApplyCoreArt
 
         // Rect의 원점은 PNG 아래쪽이다. 기차는 투명 여백을 제외한 그림 주변에 2px를 남긴다.
         var background = Import("GeneralWasteland", new Rect(0, 125, 2048, 363));
-        var station = Import("AbandonedStationPlatform", new Rect(13, 212, 1748, 457));
+        var landscape = Import("GeneralWastelandLoop", new Rect(0, 125, 2304, 363));
         var locomotive = Import("Locomotive", new Rect(26, 99, 1731, 667));
         var middle = Import("CarriageMiddle", new Rect(25, 81, 1720, 635));
         var rear = Import("CarriageRear", new Rect(24, 81, 1726, 639));
         var presentation = root.GetComponent<MinimalRunPresentation>();
         var so = new SerializedObject(presentation);
         Set(so, "generalBackground", background);
+        Set(so, "scrollingLandscape", landscape);
         Set(so, "locomotive", locomotive); Set(so, "carriageOne", middle); Set(so, "carriageTwo", rear);
-        Set(so, "stationBackground", station);
 
         var upper = root.transform.Find("TrainArea");
-        var platform = upper.Find("StationPlatform")?.GetComponent<Image>();
-        if (platform == null)
-        {
-            platform = new GameObject("StationPlatform", typeof(RectTransform), typeof(Image)).GetComponent<Image>();
-            platform.transform.SetParent(upper, false);
-        }
-        platform.transform.SetSiblingIndex(upper.Find("Horizon").GetSiblingIndex() + 1);
-        const float platformWidth = 990;
-        Place(platform.rectTransform, 850, 242, platformWidth, platformWidth * station.rect.height / station.rect.width);
-        platform.sprite = station;
-        platform.preserveAspect = true;
-        platform.raycastTarget = false;
-        Set(so, "stationPlatform", platform);
-
         var rail = upper.Find("Rail").GetComponent<RectTransform>();
         Set(so, "railPlaceholder", rail.gameObject);
         so.ApplyModifiedPropertiesWithoutUndo();
@@ -58,7 +44,7 @@ public static class ApplyCoreArt
         Sprite[] sprites = { locomotive, middle, rear };
         const float couplerOverlap = 4f;
         float trainWidth = sprites.Sum(sprite => sprite.rect.width * scale) - couplerOverlap * (sprites.Length - 1);
-        Place(train, (1920 - trainWidth) / 2f, 329, trainWidth, 200);
+        Place(train, (1920 - trainWidth) / 2f, 345, trainWidth, 200);
 
         // 기관차를 오른쪽 끝에 두고 뒤따르는 객차를 왼쪽으로 붙인다.
         float right = trainWidth;
@@ -70,13 +56,11 @@ public static class ApplyCoreArt
             right -= width - couplerOverlap;
         }
         Place(rail, 0, 529, 1920, 14);
-        var notice = upper.Find("ArtNotice").GetComponent<Text>();
-        notice.text = "열국열차 프로토타입";
         presentation.RefreshVisuals();
         EditorSceneManager.MarkSceneDirty(scene);
         if (!EditorSceneManager.SaveScene(scene)) throw new InvalidOperationException("씬 저장 실패");
         AssetDatabase.SaveAssets();
-        Debug.Log("배경, 폐역 플랫폼, 기차 그림 연결 완료.");
+        Debug.Log("반복 배경과 기차 그림 연결 완료.");
     }
 
     private static Sprite Import(string name, Rect rect)

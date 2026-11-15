@@ -57,8 +57,13 @@ public static class UpgradeAgreedRun
 
         var failure = Panel(root.transform, "FailureOverlay", 0, 0, 1920, 1080, new Color(0.04f, 0.02f, 0.03f, 0.88f), true);
         var failBody = Panel(failure, "Body", 360, 280, 1200, 520, new Color32(53, 35, 42, 255));
-        Label(failBody, "Heading", "생존 실패 · RUN 종료", 60, 40, 1080, 80, 42);
-        var failDetails = Label(failBody, "Details", "굶주림 7일차", 60, 150, 1080, 190, 29);
+        var resultHeading = Label(failBody, "Heading", "생존 결과", 60, 40, 1080, 80, 42);
+        resultHeading.alignment = TextAnchor.MiddleCenter;
+        var resultReason = Label(failBody, "Reason", "", 60, 132, 1080, 48, 28);
+        resultReason.alignment = TextAnchor.MiddleCenter;
+        var resultLabels = Label(failBody, "ResultLabels", "굶주림 지수\n마지막 배급\n생존 시간", 320, 205, 245, 150, 32);
+        var resultDetails = Label(failBody, "Details", "", 612, 205, 280, 150, 32);
+        resultLabels.lineSpacing = resultDetails.lineSpacing = 1.24f;
         var back = Button(failBody, "TitleButton", "타이틀로 돌아가기", 400, 392, 400, out ignored);
         UnityEventTools.AddPersistentListener(back.onClick, controller.ReturnToTitle);
 
@@ -68,7 +73,8 @@ public static class UpgradeAgreedRun
         Set(so, "titlePanel", title.gameObject);
         Set(so, "survivorPanel", choice.gameObject); Set(so, "survivorDetails", details);
         Set(so, "choiceToggleButton", toggle); Set(so, "choiceToggleLabel", toggleLabel);
-        Set(so, "failurePanel", failure.gameObject); Set(so, "failureDetails", failDetails);
+        Set(so, "resultPanel", failure.gameObject);
+        Set(so, "resultHeading", resultHeading); Set(so, "resultReason", resultReason); Set(so, "resultDetails", resultDetails);
         Set(so, "acceptButton", accept); Set(so, "rejectButton", reject);
         so.ApplyModifiedPropertiesWithoutUndo();
         choice.gameObject.SetActive(false); failure.gameObject.SetActive(false); toggle.gameObject.SetActive(false);
