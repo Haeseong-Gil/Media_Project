@@ -12,6 +12,7 @@ public sealed class MinimalRunPresentation : MonoBehaviour
     [SerializeField, Min(0.01f)] private float landscapeAccelerationSeconds = 3f;
     [SerializeField, Min(0.01f)] private float landscapeBrakingSeconds = 5f;
     [SerializeField] private Sprite stationBackground;
+    [SerializeField] private Sprite stationBenchPlatform;
     [SerializeField] private Sprite locomotive;
     [SerializeField] private Sprite carriageOne;
     [SerializeField] private Sprite carriageTwo;
@@ -38,11 +39,19 @@ public sealed class MinimalRunPresentation : MonoBehaviour
     private double previousTravel;
     private double landscapeVelocity;
     private double landscapeDistance;
+    private RectTransform stationStrip;
+    private float stationPatternWidth;
+    private double? stationStartDistance;
+    private double? stationEndDistance;
 
     private void Start()
     {
         if (backgroundTarget != null && scrollingLandscape != null)
+        {
             CreateLandscape();
+            if (stationPlatform != null && stationBackground != null && stationBenchPlatform != null)
+                CreateStationStrip();
+        }
         RefreshVisuals();
     }
 
@@ -62,22 +71,60 @@ public sealed class MinimalRunPresentation : MonoBehaviour
         landscapeViewport.anchorMin = Vector2.zero;
         landscapeViewport.anchorMax = Vector2.one;
         landscapeViewport.offsetMin = landscapeViewport.offsetMax = Vector2.zero;
-        leftTile = CreateLandscapeTile("LeftTile");
-        rightTile = CreateLandscapeTile("RightTile");
+        leftTile = CreateTile("LeftTile", scrollingLandscape, landscapeViewport);
+        rightTile = CreateTile("RightTile", scrollingLandscape, landscapeViewport);
+        leftTile.anchorMax = rightTile.anchorMax = Vector2.up;
         UpdateLandscape();
     }
 
-    private RectTransform CreateLandscapeTile(string name)
+    private static RectTransform CreateTile(string name, Sprite sprite, RectTransform parent)
     {
         var image = new GameObject(name, typeof(RectTransform), typeof(Image)).GetComponent<Image>();
-        image.sprite = scrollingLandscape;
+        image.sprite = sprite;
         image.raycastTarget = false;
         var rect = image.rectTransform;
-        rect.SetParent(landscapeViewport, false);
-        rect.anchorMin = Vector2.zero;
-        rect.anchorMax = Vector2.up;
-        rect.pivot = Vector2.zero;
+        rect.SetParent(parent, false);
+        rect.anchorMin = rect.anchorMax = rect.pivot = Vector2.zero;
         return rect;
+    }
+
+    private void CreateStationStrip()
+    {
+        var reference = stationPlatform.rectTransform;
+        float scale = reference.rect.width / stationBackground.rect.width;
+        float stationWidth = stationBackground.rect.width * scale;
+        float benchWidth = stationBenchPlatform.rect.width * scale;
+        // 원본 플랫폼 양끝의 투명 여백을 겹쳐 바닥에 틈이 나지 않게 한다.
+        float overlap = Mathf.Min(stationWidth, benchWidth) * 0.008f;
+        stationPatternWidth = stationWidth + 2f * benchWidth - 3f * overlap;
+        if (stationPatternWidth <= 0f) return;
+
+        // 풍경 위에 그리되 같은 마스크 안에 두어 양쪽 화면 밖은 잘라낸다.
+        stationStrip = new GameObject("ScrollingStation", typeof(RectTransform)).GetComponent<RectTransform>();
+        stationStrip.SetParent(landscapeViewport, false);
+        stationStrip.anchorMin = stationStrip.anchorMax = Vector2.up;
+        stationStrip.pivot = Vector2.zero;
+        stationStrip.sizeDelta = Vector2.zero;
+        float baseline = reference.anchoredPosition.y - reference.rect.height - backgroundTarget.rectTransform.anchoredPosition.y;
+        stationStrip.anchoredPosition = new Vector2(0f, baseline);
+        stationStrip.gameObject.SetActive(false);
+
+        int copies = Mathf.CeilToInt(landscapeViewport.rect.width / stationPatternWidth) + 1;
+        for (int i = 0; i < copies; i++)
+        {
+            float start = i * stationPatternWidth;
+            float firstBench = start + stationWidth - overlap;
+            AddStationTile("Station", stationBackground, start, scale);
+            AddStationTile("Benches", stationBenchPlatform, firstBench, scale);
+            AddStationTile("Benches", stationBenchPlatform, firstBench + benchWidth - overlap, scale);
+        }
+    }
+
+    private void AddStationTile(string name, Sprite sprite, float offset, float scale)
+    {
+        var tile = CreateTile(name, sprite, stationStrip);
+        tile.sizeDelta = sprite.rect.size * scale;
+        tile.anchoredPosition = new Vector2(offset, 0f);
     }
 
     private void UpdateLandscape()
@@ -92,6 +139,55 @@ public sealed class MinimalRunPresentation : MonoBehaviour
         leftTile.sizeDelta = rightTile.sizeDelta = new Vector2(width, 0f);
         leftTile.anchoredPosition = new Vector2(-offset, 0f);
         rightTile.anchoredPosition = new Vector2(width - offset, 0f);
+        UpdateStationStrip(viewport.width);
+    }
+
+    private void UpdateStationStrip(float viewportWidth)
+    {
+        if (stationStrip == null || landscapeRun == null) return;
+        if (screen.IsAtTitle)
+        {
+            if (stationStartDistance.HasValue) ResetStationStrip();
+            return;
+        }
+
+        bool atStation = landscapeRun.AtStation;
+        if (atStation && (!stationStartDistance.HasValue || stationEndDistance.HasValue))
+        {
+            stationStartDistance ??= landscapeDistance + viewportWidth;
+            stationEndDistance = null;
+            for (int i = 0; i < stationStrip.childCount; i++)
+                stationStrip.GetChild(i).gameObject.SetActive(true);
+            stationStrip.gameObject.SetActive(true);
+        }
+        if (!stationStartDistance.HasValue) return;
+
+        // 첫 타일은 화면 오른쪽에서 들어온다. 반복 위치는 계속 배경의 누적 이동값을 따른다.
+        double offset = landscapeDistance - stationStartDistance.Value;
+        double firstPattern = System.Math.Floor(System.Math.Max(0d, offset) / stationPatternWidth) * stationPatternWidth;
+        stationStrip.anchoredPosition = new Vector2((float)(firstPattern - offset), stationStrip.anchoredPosition.y);
+        if (atStation) return;
+
+        // 이탈 순간 화면 오른쪽 끝에 닿은 타일까지 보존하고, 그 뒤에는 새 타일을 내보내지 않는다.
+        stationEndDistance ??= landscapeDistance + viewportWidth;
+        bool hasRemainingTile = false;
+        for (int i = 0; i < stationStrip.childCount; i++)
+        {
+            var tile = (RectTransform)stationStrip.GetChild(i);
+            double tileStart = stationStartDistance.Value + firstPattern + tile.anchoredPosition.x;
+            bool remains = tileStart < stationEndDistance.Value && tileStart + tile.rect.width > landscapeDistance;
+            if (tile.gameObject.activeSelf != remains)
+                tile.gameObject.SetActive(remains);
+            hasRemainingTile |= remains;
+        }
+        if (!hasRemainingTile) ResetStationStrip();
+    }
+
+    private void ResetStationStrip()
+    {
+        stationStartDistance = stationEndDistance = null;
+        if (stationStrip != null)
+            stationStrip.gameObject.SetActive(false);
     }
 
     private void AdvanceLandscapeMotion()
@@ -101,6 +197,7 @@ public sealed class MinimalRunPresentation : MonoBehaviour
         {
             landscapeRun = run;
             previousElapsed = previousTravel = landscapeVelocity = landscapeDistance = 0;
+            ResetStationStrip();
         }
         if (run == null) return;
 
@@ -147,7 +244,7 @@ public sealed class MinimalRunPresentation : MonoBehaviour
         if (stationPlatform != null)
         {
             bool showPlatform = atStation && stationBackground != null;
-            stationPlatform.gameObject.SetActive(showPlatform);
+            stationPlatform.gameObject.SetActive(showPlatform && stationStrip == null);
             if (showPlatform)
             {
                 background = generalBackground;

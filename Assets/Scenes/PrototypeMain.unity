@@ -6760,7 +6760,8 @@ MonoBehaviour:
   landscapeSpeed: 500
   landscapeAccelerationSeconds: 3
   landscapeBrakingSeconds: 5
-  stationBackground: {fileID: 0}
+  stationBackground: {fileID: -2044356407, guid: e5cf774e5f5845743ac6e4789d52621c, type: 3}
+  stationBenchPlatform: {fileID: 678457915, guid: 30616f1894684a28bfea90566711b4d6, type: 3}
   locomotive: {fileID: -144913785, guid: d4a6af2438a50524c8170803a92d36a4, type: 3}
   carriageOne: {fileID: 1029286806, guid: 1cc35088290247e4c927b10894538c87, type: 3}
   carriageTwo: {fileID: -1280422594, guid: 15efb520bfde08b43b116db648c8b68a, type: 3}

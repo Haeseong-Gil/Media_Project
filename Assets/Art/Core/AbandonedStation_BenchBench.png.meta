@@ -1,0 +1,63 @@
+fileFormatVersion: 2
+guid: 30616f1894684a28bfea90566711b4d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 678457915
+    second: AbandonedStation_BenchBench
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    enableMipMap: 0
+    sRGBTexture: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  spritePixelsToUnits: 100
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  textureShape: 1
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AbandonedStation_BenchBench
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 212
+        width: 1730
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f749816dd96436d9a4267f6a3ce5f0a
+      internalID: 678457915
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    nameFileIdTable:
+      AbandonedStation_BenchBench: 678457915
